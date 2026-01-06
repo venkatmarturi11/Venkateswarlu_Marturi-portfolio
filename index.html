@@ -295,7 +295,21 @@ h3{
   padding:20px;
   border-radius:14px;
   font-weight:600;
+  color:white; 
 }
+
+.skill{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.skill img{
+  width:32px;
+  height:32px;
+  object-fit:contain;
+}
+
 
 .bar{
   height:8px;
@@ -383,6 +397,29 @@ footer{
 @keyframes pulse{
   0%,100%{box-shadow:0 0 20px rgba(56,189,248,.4)}
   50%{box-shadow:0 0 40px rgba(56,189,248,.9)}
+}
+
+/* ===== PROJECT IMAGE SLIDER ===== */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.slider img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slider img.active {
+  opacity: 1;
 }
 
 
@@ -500,28 +537,59 @@ Percentage:95%</br>
 
 <section id="skills" class="card">
   <h3>Skills</h3>
-  <div class="skills-grid">
-    <div style="color:white",class="skill">Python<div class="bar"><span style="width:70%"></span></div></div>
-    <div style="color:white",class="skill">C Language<div class="bar"><span style="width:85%"></span></div></div>
-    <div style="color:white",class="skill">Data Science<div class="bar"><span style="width:80%"></span></div></div>
-    <div style="color:white",class="skill">Java<div class="bar"><span style="width:80%"></span></div></div>
+<div class="skills-grid">
+  <div class="skill">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+    Python
+    <div class="bar"><span style="width:70%"></span></div>
   </div>
+  <div class="skill">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg">
+    C Language
+    <div class="bar"><span style="width:85%"></span></div>
+  </div>
+  <div class="skill">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+    Java
+    <div class="bar"><span style="width:80%"></span></div>
+  </div>
+  <div class="skill">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg">
+    Data Science
+    <div class="bar"><span style="width:80%"></span></div>
+  </div>
+
+</div>
+
+
 </section>
 
 <section id="projects" class="card">
   <h3>Projects</h3>
   <div class="projects-grid">
-    <div class="project">
-      <img src="https://via.placeholder.com/400x220">
-      <h4 style="color:#F226D7">MOVIE RECOMMENDATION USING DL EMBEDDINGS</h4>
-      <p>DL-based recommendation system using embeddings.</p>
+
+  <div class="project">
+    <div class="slider">
+      <img src="https://picsum.photos/800/400?1" class="active">
+      <img src="https://picsum.photos/800/400?2">
+      <img src="https://picsum.photos/800/400?3">
     </div>
-    <div class="project">
-      <img src="https://via.placeholder.com/400x220">
-      <h4 style="color:#906A14">>Student Performance Analysis</h4>
-      <p>Data science project with visualization and prediction.</p>
-    </div>
+    <h4 style="color:#F226D7">MOVIE RECOMMENDATION USING DL EMBEDDINGS</h4>
+    <p>DL-based recommendation system using embeddings.</p>
   </div>
+
+  <div class="project">
+    <div class="slider">
+      <img src="https://picsum.photos/800/400?4">
+      <img src="https://picsum.photos/800/400?5" class="active">
+      <img src="https://picsum.photos/800/400?6">
+    </div>
+    <h4 style="color:#906A14">Student Performance Analysis</h4>
+    <p>Data science project with visualization and prediction.</p>
+  </div>
+
+</div>
+>
 </section>
 
 <section class="btns">
@@ -545,8 +613,44 @@ window.addEventListener('scroll', reveal);
 reveal();
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const supabaseUrl = "PASTE_YOUR_PROJECT_URL";
+const supabaseKey = "PASTE_YOUR_ANON_KEY";
+const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+
+async function sendMessage() {
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const message = document.getElementById("message").value;
+
+  const { error } = await supabase
+    .from("contacts")
+    .insert([{ name, email, message }]);
+
+  if (error) {
+    alert("Error sending message");
+  } else {
+    alert("Message sent successfully!");
+  }
+}
+</script>
+
+<script>
+document.querySelectorAll(".slider").forEach(slider => {
+  let index = 0;
+  const images = slider.querySelectorAll("img");
+
+  setInterval(() => {
+    images[index].classList.remove("active");
+    index = (index + 1) % images.length;
+    images[index].classList.add("active");
+  }, 3000); // change image every 3 seconds
+});
+</script>
+
 
 </body>
 </html>
-
 
