@@ -328,39 +328,33 @@ section{padding:70px 8%;}
 /* PROFILE */
 .profile-wrap{
   position:relative;
-  width:320px;
-  height:360px;
+  width:300px;
   display:flex;
   flex-direction:column;
   align-items:center;
+  gap:14px;           /* space between photo and icons */
 }
 
 
-
 .profile-img{
-  width:300px;
-  height:300px;
+  width:260px;
+  height:260px;
   border-radius:50%;
   object-fit:cover;
   border:4px solid var(--accent);
-  position:relative;
-  z-index:2;
- animation:float 5s ease-in-out infinite;
+  animation:float 5s ease-in-out infinite;
 }
 
 /* SOCIALS */
 .socials{
-  position:absolute;
-  bottom:10px;     /* now INSIDE visible area */
-  left:50%;
-  transform:translateX(-50%);
+  position:static;    /* <<< THIS FIXES THE OVERLAP */
   display:flex;
   gap:16px;
   justify-content:center;
   align-items:center;
-  width:100%;
-  z-index:5;       /* ensures above image */
+  margin-top:-10px;   /* pulls icons slightly up */
 }
+
 
 
 .socials a{
@@ -531,12 +525,20 @@ footer{
 }
 
 /* RESPONSIVE */
-@media(max-width:900px){
-  .hero{
-    grid-template-columns:1fr;
-    text-align:center;
+@media (max-width: 768px) {
+  .profile-wrap{
+    width:260px;
   }
-  .profile-wrap{margin:auto;}
+
+  .profile-img{
+    width:230px;
+    height:230px;
+  }
+
+  .socials a{
+    width:46px;
+    height:46px;
+  }
 }
 
 @media(max-width:768px){
