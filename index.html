@@ -46,6 +46,68 @@ body::before{
   animation:bgMove 25s ease-in-out infinite alternate;
 }
 
+/* ===== CERTIFICATE GRID (LIKE SKILLS) ===== */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+}
+
+.cert-item{
+  background:rgba(0,0,0,0.6);
+  padding:20px;
+  border-radius:14px;
+  font-weight:600;
+  color:white;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.cert-item:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px rgba(56,189,248,.9);
+}
+
+.cert-item img{
+  width:38px;
+  height:38px;
+  object-fit:contain;
+}
+
+/* ===== EDUCATION GRID ===== */
+.edu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
+.edu-item{
+  background:rgba(0,0,0,0.6);
+  padding:25px;
+  border-radius:16px;
+  transition:.3s;
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+}
+
+.edu-item:hover{
+  transform:scale(1.06);
+  box-shadow:0 0 30px rgba(56,189,248,.8);
+}
+
+.edu-item h4{
+  color:var(--accent);
+  margin-bottom:10px;
+}
+
+.edu-item span{
+  color:#facc15;
+  font-weight:600;
+}
+
+
 /* Subtle animated motion */
 @keyframes bgMove
 {
@@ -476,46 +538,79 @@ in</a>
 
 <section class="card">
   <h3>Education</h3>
-  <p>
-    <b style="color:#906A14">• B.Tech – Computer Science Engineering (AI & ML)</b>
-	<br>Rise Krishna Sai Prakasam Group of institutions</br>
-	Percentage:70%</br>
-    2022 – 2026</br>
-  </p>
- <p>
-    <b style="color:#906A14">• Intermediate (MPC)</b>
-	<br>Sri Saraswathi Junior College</br>
-	Percentage:55.6%</br>
-    2020 – 2022
-  </p>
- <p>
-    <b style="color:#906A14">• SSC (10th)</b>
-	<br>Sriji High School</br>
-Percentage:95%</br>
-    2019 – 2020
-  </p>
 
+  <div class="edu-grid">
 
+    <div class="edu-item">
+      <h4>B.Tech – CSE (AI & ML)</h4>
+      <p>Rise Krishna Sai Prakasam Group of Institutions</p>
+      <span>2022 – 2026</span>
+      <p>Percentage: <b>70%</b></p>
+    </div>
+
+    <div class="edu-item">
+      <h4>Intermediate (MPC)</h4>
+      <p>Sri Saraswathi Junior College</p>
+      <span>2020 – 2022</span>
+      <p>Percentage: <b>55.6%</b></p>
+    </div>
+
+    <div class="edu-item">
+      <h4>SSC (10th)</h4>
+      <p>Sriji High School</p>
+      <span>2019 – 2020</span>
+      <p>Percentage: <b>95%</b></p>
+    </div>
+
+  </div>
 </section>
+
 
 <section class="card">
   <h3>Internships & Experience</h3>
   <p>
-    <b>AI / ML Intern</b> – Online Internship<br>
-    • Built ML models for prediction tasks<br>
-    • Worked with datasets, preprocessing, evaluation<br>
+    <b>Full Stack MERN</b> – Online Internship<br>
+    • Full Stack Java<br>
+    • Employability Skills<br>
+    • Cyber Security<br>
+    • Ethical Hacking<br>
     • Tools: Python, Pandas, Scikit-learn
   </p>
 </section>
 
 <section class="card">
   <h3>Certifications</h3>
-  <ul>
-    <li>Python for Data Science – NPTEL</li>
-    <li>Machine Learning with Python – Coursera</li>
-    <li>AI Foundations – Infosys Springboard</li>
-  </ul>
+
+  <div class="cert-grid">
+
+    <div class="cert-item" onclick="window.open('Full Stack MERN.pdf')">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+      Full Stack MERN – SmartBridge
+    </div>
+
+    <div class="cert-item" onclick="window.open('Full Stack Java.pdf')">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg">
+       Full Stack Java – EXCELR
+    </div>
+
+    <div class="cert-item" onclick="window.open('Employebility Skills.pdf')">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg">
+      Employability Skills – Eduskills
+    </div>
+
+    <div class="cert-item" onclick="window.open('Cyber Security.pdf')">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg">
+      Cyber Security – Eduskills
+    </div>
+
+    <div class="cert-item" onclick="window.open('Ethical Hacking.pdf')">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg">
+      Ethical Hacking – Eduskills
+    </div>
+
+  </div>
 </section>
+
 
 <section class="card">
   <h3>Achievements</h3>
@@ -529,8 +624,17 @@ Percentage:95%</br>
 <section class="card">
   <h3>Tools & Technologies</h3>
   <p>
-    Python • Java • C • Pandas • NumPy • Scikit-learn • TensorFlow •
-    Git • GitHub • HTML • CSS
+    • Python<br> 
+    • Java <br>
+    • C <br>
+    • Pandas<br> 
+    • NumPy <br>
+    • Scikit-learn<br> 
+    • TensorFlow <br>
+    • Git <br>
+    • GitHub <br>
+    • HTML <br>
+    • CSS
   </p>
 </section>
 
