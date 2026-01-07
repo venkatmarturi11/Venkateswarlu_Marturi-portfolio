@@ -46,6 +46,85 @@ body::before{
   animation:bgMove 25s ease-in-out infinite alternate;
 }
 
+/* ===== MOBILE FIX PACK ===== */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Hero fix */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .profile-wrap {
+    width: 280px;
+    height: 350px;
+  }
+
+  .profile-img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .socials a {
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .hero h2 {
+    font-size: 34px;
+  }
+}
+
+/* Header fix */
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  nav a {
+    margin-left: 0;
+  }
+}
+
+/* Skills fix */
+.skill {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.skill .bar {
+  width: 100%;
+}
+
+/* Cards padding fix */
+@media (max-width: 600px) {
+  section {
+    padding: 50px 6%;
+  }
+
+  .card {
+    padding: 22px;
+  }
+
+  h3 {
+    font-size: 26px;
+  }
+}
+
+/* Project images fix */
+.slider {
+  height: 180px;
+}
+
+
 /* ===== CERTIFICATE GRID (LIKE SKILLS) ===== */
 .cert-grid{
   display:grid;
@@ -146,6 +225,16 @@ body::before{
     justify-content: center;
     text-align: center;
   }
+
+  .logo-img{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--accent);
+}
+
+
 @media (max-width:768px){
   .socials{
     bottom:-55px;
@@ -492,7 +581,7 @@ footer{
 
 <header>
   <div class="logo">
-    <img src="profile.jpg" class="profile-img" alt="Venkateswarlu Marturi">
+    <img src="profile.jpg" class="logo-img" alt="Venkateswarlu Marturi">
     Venkateswarlu Marturi
   </div>
   <nav>
@@ -693,8 +782,8 @@ in</a>
   </div>
 
 </div>
->
 </section>
+
 
 <section class="btns">
   <a href="https://www.linkedin.com/in/venkateswarlu-marturi-19b115385/" class="btn">Hire Me</a>
