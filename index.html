@@ -265,11 +265,15 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  gap:12px;
-  padding:16px 6%;
+  padding:20px 10%;
   background:var(--glass);
   backdrop-filter:blur(14px);
-  flex-wrap:wrap;
+  flex-wrap: nowrap;   /* IMPORTANT: keeps PC layout in one line */
+}
+
+nav{
+  display:flex;
+  align-items:center;
 }
 
 
@@ -618,7 +622,7 @@ footer{
   }
 }
 
-/* ===== PERFECT MOBILE HEADER ===== */
+/* ===== MOBILE HEADER ONLY ===== */
 @media (max-width: 768px){
 
   header{
@@ -626,6 +630,7 @@ footer{
     align-items: center;
     text-align: center;
     gap: 12px;
+    padding: 15px 6%;
   }
 
   .logo{
@@ -649,6 +654,7 @@ footer{
     text-align: center;
   }
 }
+
 
 
 /* ===== PROJECT IMAGE SLIDER ===== */
