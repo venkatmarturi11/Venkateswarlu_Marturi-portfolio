@@ -100,6 +100,11 @@ html, body {
     font-size: 15px;
     margin-top: 10px;
   }
+
+  .hero-left, .hero-right{
+  width:100%;
+}
+
 }
 
 
@@ -219,52 +224,38 @@ html, body {
 
 /* HEADER */
 
-/* ===== HEADER FIX FOR MOBILE ===== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    padding: 15px 5%;
+/* ===== ULTIMATE MOBILE HERO FIX ===== */
+@media (max-width: 900px) {
+
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 24px !important;
   }
 
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px;
+  .hero > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
   }
 
-  nav a {
-    margin-left: 0;
+  .hero h2,
+  .hero p {
+    text-align: center !important;
   }
 
-  nav .btn {
-    padding: 10px 22px;
-    font-size: 14px;
-  }
-
-  .logo {
-    justify-content: center;
-    text-align: center;
-  }
-
-  .logo-img{
-  width:45px;
-  height:45px;
-  border-radius:50%;
-  object-fit:cover;
-  border:2px solid var(--accent);
-}
-
-
-@media (max-width:768px){
-  .socials{
-    bottom:-55px;
+  .hero p {
+    max-width: 95% !important;
   }
 }
 
-}
 
 
 header{
@@ -668,7 +659,7 @@ footer{
 </header>
 
 <section class="hero">
-  <div>
+  <div class="hero-left">
     <div class="profile-wrap">
       <span class="ring"></span>
 	<img src="profile.jpg" class="profile-img" alt="Venkateswarlu Marturi">
@@ -681,7 +672,7 @@ in</a>
   </div>
 
   <div>
-    <h2 style="color:white">Hi, I'm <span>Venkateswarlu Marturi</span></h2>
+    <h2 style="color:white",class="hero-right">Hi, I'm <span>Venkateswarlu Marturi</span></h2>
     <p style="color:white" >CSE (AI & ML) student passionate about Machine Learning, Artificial Intelligence, and data-driven solutions.</p>
   </div>
 </section>
