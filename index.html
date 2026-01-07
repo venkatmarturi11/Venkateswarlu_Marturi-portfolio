@@ -62,20 +62,27 @@ html, body {
     text-align: center;
   }
 
-  .profile-wrap {
-    width: 260px;
-    height: 300px;
-  }
+  .profile-wrap{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:12px;
+}
 
-  .profile-img {
+.profile-img {
     width: 240px;
     height: 240px;
   }
 
-  .socials {
-    bottom: 0px;
-    gap: 14px;
-  }
+  .socials{
+  position: static;
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  align-items:center;
+}
+
 
   .socials a {
     width: 46px;
@@ -569,6 +576,54 @@ footer{
   0%,100%{box-shadow:0 0 20px rgba(56,189,248,.4)}
   50%{box-shadow:0 0 40px rgba(56,189,248,.9)}
 }
+
+/* ===== FORCE PERFECT MOBILE HERO LAYOUT ===== */
+@media (max-width: 900px) {
+
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+    min-height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .hero > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-wrap {
+    width: 260px;
+    align-items: center;
+  }
+
+  .profile-img {
+    width: 230px;
+    height: 230px;
+  }
+
+  .socials {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .hero h2 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 15px;
+    max-width: 95%;
+  }
+}
+
 
 /* ===== PROJECT IMAGE SLIDER ===== */
 .slider {
