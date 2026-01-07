@@ -51,34 +51,50 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Hero fix */
-@media (max-width: 900px) {
+/* ===== PERFECT MOBILE HERO FIX ===== */
+@media (max-width: 768px) {
+
   .hero {
-    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    gap: 20px;
     text-align: center;
-    gap: 30px;
   }
 
   .profile-wrap {
-    width: 280px;
-    height: 350px;
+    width: 260px;
+    height: 300px;
   }
 
   .profile-img {
-    width: 260px;
-    height: 260px;
+    width: 240px;
+    height: 240px;
+  }
+
+  .socials {
+    bottom: 0px;
+    gap: 14px;
   }
 
   .socials a {
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     font-size: 16px;
   }
 
   .hero h2 {
-    font-size: 34px;
+    font-size: 30px;
+    line-height: 1.2;
+    margin-top: 10px;
+  }
+
+  .hero p {
+    font-size: 15px;
+    margin-top: 10px;
   }
 }
+
 
 /* Header fix */
 
@@ -297,7 +313,8 @@ nav a::after{
 nav a:hover::after{width:100%;}
 
 /* SECTIONS */
-section{padding:90px 10%;}
+section{padding:70px 8%;}
+
 
 /* HERO */
 .hero{
@@ -311,17 +328,18 @@ section{padding:90px 10%;}
 /* PROFILE */
 .profile-wrap{
   position:relative;
-  width:360px;
-  height:430px;   /* extra space for socials */
+  width:320px;
+  height:360px;
   display:flex;
   flex-direction:column;
   align-items:center;
 }
 
 
+
 .profile-img{
-  width:350px;
-  height:350px;
+  width:300px;
+  height:300px;
   border-radius:50%;
   object-fit:cover;
   border:4px solid var(--accent);
