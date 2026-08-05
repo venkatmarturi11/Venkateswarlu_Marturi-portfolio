@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download YouTube Playlist Downloader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #10b981;
+      --primary-hover: #059669;
+      --bg: #111827;
+      --text: #f9fafb;
+      --text-light: #9ca3af;
+      --card-bg: #1f2937;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      padding: 40px 20px;
+      margin: 40px auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+    h1 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    p.subtitle {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+    .download-btn {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
+      color: white;
+      padding: 16px 32px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    }
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+    }
+    .instructions {
+      text-align: left;
+      background: #374151;
+      padding: 30px;
+      border-radius: 8px;
+    }
+    .instructions h2 {
+      margin-top: 0;
+      color: var(--text);
+    }
+    .instructions ol {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+    .instructions li {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+    .instructions li:last-child {
+      margin-bottom: 0;
+    }
+    .highlight {
+      background: #4b5563;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: var(--primary);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>YouTube Playlist Downloader</h1>
+    <p class="subtitle">Download entire YouTube playlists easily with a clean, fast desktop interface.</p>
+    
+    <a href="desktop-downloader.zip" download="desktop-downloader.zip" class="download-btn">
+      Download App (.zip)
+    </a>
+
+    <div class="instructions">
+      <h2>How to run the app:</h2>
+      <ol>
+        <li><strong>Extract the file:</strong> Right-click the downloaded <code>desktop-downloader.zip</code> file and select <strong>"Extract All..."</strong>.</li>
+        <li><strong>Install Python:</strong> Make sure you have <a href="https://www.python.org/downloads/" target="_blank" style="color: var(--primary);">Python</a> installed on your computer.</li>
+        <li><strong>Run the App:</strong> Open the extracted folder and double-click the <span class="highlight">run-desktop-version.bat</span> file.</li>
+        <li><strong>First Run:</strong> The script will automatically install the required libraries (like `yt-dlp` and `flask`) and start the application in a new window!</li>
+      </ol>
+    </div>
+  </div>
+
+</body>
+</html>
