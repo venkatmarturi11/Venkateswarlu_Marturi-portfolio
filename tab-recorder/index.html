@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Screen Recorder for Google Chrome™</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #5b4a9c;
+      --primary-hover: #4a3c7c;
+      --bg: #f9fafb;
+      --text: #1f2937;
+      --text-light: #6b7280;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      padding: 40px 20px;
+      margin: 40px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      text-align: center;
+    }
+    h1 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    p.subtitle {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+    .download-btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 16px 32px;
+      font-size: 1.2rem;
+      font-weight: 500;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: background-color 0.2s;
+      margin-bottom: 40px;
+    }
+    .download-btn:hover {
+      background-color: var(--primary-hover);
+    }
+    .instructions {
+      text-align: left;
+      background: #f3f4f6;
+      padding: 30px;
+      border-radius: 8px;
+    }
+    .instructions h2 {
+      margin-top: 0;
+      color: var(--text);
+    }
+    .instructions ol {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+    .instructions li {
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+    .instructions li:last-child {
+      margin-bottom: 0;
+    }
+    .highlight {
+      background: #e5e7eb;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: var(--primary);
+    }
+    .warning-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      padding: 16px;
+      margin-top: 20px;
+      text-align: left;
+      font-size: 0.95rem;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Screen Recorder Extension</h1>
+    <p class="subtitle">Record your screen, windows, or tabs with system audio and microphone for free.</p>
+    
+    <!-- Link to the zip file we created -->
+    <a href="tab-recorder.zip" download="tab-recorder.zip" class="download-btn">
+      Download Extension (.zip)
+    </a>
+
+    <div class="instructions">
+      <h2>How to install in JioSphere / Chrome for free:</h2>
+      <ol>
+        <li><strong>Extract the file:</strong> Right-click the downloaded <code>tab-recorder.zip</code> file and select <strong>"Extract All..."</strong> to unzip it.</li>
+        <li><strong>Open Extensions page:</strong> Open your browser (JioSphere or Chrome), type <span class="highlight">chrome://extensions</span> into the address bar, and hit Enter.</li>
+        <li><strong>Enable Developer Mode:</strong> Turn on the <strong>"Developer mode"</strong> toggle in the top-right corner of the page.</li>
+        <li><strong>Load the extension:</strong> Click the <strong>"Load unpacked"</strong> button in the top-left corner. Select the unzipped <code>tab-recorder</code> folder you extracted in step 1.</li>
+        <li><strong>Done!</strong> The Screen Recorder icon will appear in your browser toolbar. Pin it and click it to start recording.</li>
+      </ol>
+    </div>
+
+    <div class="warning-box">
+      <strong>Why do I have to install it this way?</strong><br>
+      Browser makers like Google disabled "one-click" extension installations from normal websites years ago for security reasons. Unless developers pay fees to publish to the official Web Store, extensions must be loaded manually via Developer Mode. This method is 100% free and safe!
+    </div>
+  </div>
+
+</body>
+</html>
